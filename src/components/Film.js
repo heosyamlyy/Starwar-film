@@ -11,4 +11,4 @@ const Film = ({ film }) => {
         </div>
     )
 }
-export default Planet;
+export default Film;
