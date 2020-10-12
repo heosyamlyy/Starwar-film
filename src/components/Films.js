@@ -1,7 +1,8 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import Film from './Film';
-//import Skeleton from '@material-ui/lab/Skeleton';
+import '@material-ui/core';
+import { Skeleton } from '@material-ui/lab';
 
 
 const fetchFilm = async () => {
@@ -18,8 +19,13 @@ const Films = () => {
             <p>{status}</p>
             {
                 status === 'loading' && (
+                    <div>
+                        
+                        <Skeleton />
+                        <Skeleton animation={false} />
+                        <Skeleton animation="wave" />
+                    </div>
 
-                    <div>loading</div>
 
 
                 )}
