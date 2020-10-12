@@ -1,8 +1,8 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-import Film from './Film';
 import '@material-ui/core';
 import { Skeleton } from '@material-ui/lab';
+import './Films.css';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -24,29 +24,30 @@ function makeTable(film) {
     const classes = makeStyles({
         table: {
             minWidth: 650,
+            maxWidth: 1000,
         },
     });
 
     return (
         <TableContainer component={Paper}>
-            <Table className={classes.table} size="small" aria-label="a dense table">
+            <Table className={classes.table} size="medium" aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell>Title</TableCell>
-                        <TableCell align="right">Episode ID</TableCell>
-                        <TableCell align="right">Release Date</TableCell>
-                        <TableCell align="right">Director</TableCell>
+                        <TableCell align="center">Title</TableCell>
+                        <TableCell align="center">Episode ID</TableCell>
+                        <TableCell align="center">Release Date</TableCell>
+                        <TableCell align="center">Director</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {film.map((film) => (
                         <TableRow key={film.title}>
-                            <TableCell component="th" scope="row">
+                            <TableCell component="th" scope="row" align="center">
                                 {film.title}
                             </TableCell>
-                            <TableCell align="right">{film.episode_id}</TableCell>
-                            <TableCell align="right">{film.release_date}</TableCell>
-                            <TableCell align="right">{film.director}</TableCell>
+                            <TableCell align="center">{film.episode_id}</TableCell>
+                            <TableCell align="center">{film.release_date}</TableCell>
+                            <TableCell align="center">{film.director}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
@@ -61,8 +62,6 @@ const Films = () => {
 
     return (
         <div>
-            <h2>Film</h2>
-            <p>{status}</p>
             {
                 status === 'loading' && (
                     <div>
