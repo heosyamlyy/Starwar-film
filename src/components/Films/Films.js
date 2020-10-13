@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import '@material-ui/core';
 import { Skeleton } from '@material-ui/lab';
 import './Films.css';
-
+import FilmTable from './FilmTable.js'
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -20,17 +20,19 @@ const fetchFilm = async () => {
     return res.json();
 }
 
+
 function makeTable(film) {
     const classes = makeStyles({
         table: {
-            minWidth: 650,
-            maxWidth: 1000,
+
+            
         },
     });
 
     return (
+        
         <TableContainer component={Paper}>
-            <Table className={classes.table} size="medium" aria-label="simple table">
+            <Table className={classes.table} data-testid="Table" size="medium" aria-label="simple table">
                 <TableHead>
                     <TableRow>
                         <TableCell align="center">Title</TableCell>
@@ -58,7 +60,7 @@ function makeTable(film) {
     
 const Films = () => {
     const { data, status } = useQuery('film', fetchFilm);
-    console.log(data);
+    //console.log(data);
 
     return (
         <div>
@@ -66,7 +68,7 @@ const Films = () => {
                 status === 'loading' && (
                     <div>
                         
-                        <Skeleton />
+                        <Skeleton data-testid="Skeleton" />
                         <Skeleton animation={false} />
                         <Skeleton animation="wave" />
                     </div>
@@ -78,8 +80,8 @@ const Films = () => {
                 <div> Error fetching data</div>
             )}
             {status === 'success' && (
-                
-                makeTable(data.results)
+                <FilmTable film={data.results}></FilmTable>
+                //makeTable(data.results)
                 //{data.results.map(planet => <Planet key={planet.name} planet={planet} />)}
               
             )}
