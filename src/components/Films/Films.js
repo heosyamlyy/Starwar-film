@@ -21,42 +21,6 @@ const fetchFilm = async () => {
 }
 
 
-function makeTable(film) {
-    const classes = makeStyles({
-        table: {
-
-            
-        },
-    });
-
-    return (
-        
-        <TableContainer component={Paper}>
-            <Table className={classes.table} data-testid="Table" size="medium" aria-label="simple table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell align="center">Title</TableCell>
-                        <TableCell align="center">Episode ID</TableCell>
-                        <TableCell align="center">Release Date</TableCell>
-                        <TableCell align="center">Director</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {film.map((film) => (
-                        <TableRow key={film.title}>
-                            <TableCell component="th" scope="row" align="center">
-                                {film.title}
-                            </TableCell>
-                            <TableCell align="center">{film.episode_id}</TableCell>
-                            <TableCell align="center">{film.release_date}</TableCell>
-                            <TableCell align="center">{film.director}</TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
-    );
-}
     
 const Films = () => {
     const { data, status } = useQuery('film', fetchFilm);
