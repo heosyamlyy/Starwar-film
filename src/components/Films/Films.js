@@ -5,6 +5,7 @@ import { Skeleton } from '@material-ui/lab';
 import './Films.css';
 import Navbar from './../Navbar/Navbar.js'
 import FilmTable from './../FilmTable/FilmTable.js'
+import SortedFilmTable from './../SortedFilmTable/SortedFilmTable.js'
 
 const fetchFilm = async () => {
     const res = await fetch('http://swapi.dev/api/films/');
@@ -38,7 +39,9 @@ const Films = () => {
                     
                     <Navbar setPage={setPage}></Navbar>
                     <div>
-                        {page === 'FilmTable' ? <FilmTable film={data.results}></FilmTable> : <FilmTable film={data.results}></FilmTable>}
+                        {page === 'FilmTable' ? 
+                        <FilmTable film={data.results}></FilmTable> : 
+                        <SortedFilmTable film={data.results}></SortedFilmTable>}
                     </div>
                 </div>
                 /*
