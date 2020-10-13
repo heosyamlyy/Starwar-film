@@ -1,10 +1,14 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
+
 
 const Navbar= ({ setPage }) => {
     return (
         <nav>
-            <button onClick={() => setPage('FilmTable')}>Film Table</button>
-            <button onClick={() => setPage('SortedFilmTable')}>Sorted Film Table</button>
+            <Button variant="contained" onClick={() => setPage('FilmTable')}>Film Table</Button>
+            <Button variant="contained" color="primary" onClick={() => setPage('SortedFilmTable')}>
+                Sorted Film Table
+            </Button>
         </nav>
         
     );
