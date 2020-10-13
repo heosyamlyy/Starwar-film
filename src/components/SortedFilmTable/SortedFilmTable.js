@@ -3,7 +3,7 @@ import { DataGrid } from '@material-ui/data-grid';
 import { makeStyles } from '@material-ui/core/styles';
 
 
-
+//Define the Columns value for the table
 const columns = [
     { field: 'id', headerName: 'Episode ID', type: 'number', width: 150 },
 
@@ -13,6 +13,7 @@ const columns = [
     { field: 'director', headerName: 'Director', width: 200 },
 
 ];
+//Define the style for the table
 const useStyles = makeStyles({
     table: {
         height: 450,
@@ -22,7 +23,7 @@ const useStyles = makeStyles({
     
 });
 
-
+//Add key-pair of <id, episode_id> to the input dataList
 function addID(dataList) {
     var outputData = [];
     for (var i = 0; i < dataList.length; i++) {
@@ -31,6 +32,7 @@ function addID(dataList) {
     }
     return outputData;
 }
+
 function DataTable({ film }) {
     //const rows = person;
     const classes = useStyles();

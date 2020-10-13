@@ -11,8 +11,6 @@ it('renders Skeleton correctly', () => {
 });
 
 it('renders Navbar correctly', async () => {
-    //await waitForDomChange();
-
     const div = document.createElement('div');
     ReactDOM.render(<Navbar />, div);
     ReactDOM.unmountComponentAtNode(div);

@@ -10,17 +10,8 @@ h1 {
   padding: 10vh;
 
 }
-Films {
-  padding-left: 15vh;
-  padding-right: 15vh;
-}
 
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 
 

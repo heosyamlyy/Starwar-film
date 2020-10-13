@@ -5,13 +5,16 @@ import {render} from '@testing-library/react';
 import Button  from '@material-ui/core/Button';
 
 it('renders Button correctly', () => {
-    const { debug } = render(
+    const {debug } = render(
         <Navbar></Navbar>
     );
     debug();
+
     const div = document.createElement('div');
     ReactDOM.render(<Button />, div);
     ReactDOM.unmountComponentAtNode(div);
 });
+
+
 
 

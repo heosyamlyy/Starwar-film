@@ -8,21 +8,20 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
+//Define the style for the table
 const useStyles = makeStyles({
     table: {
         minWidth: 650,
         background: '#FFFF22',
-
     },
     tableCell: {
         borderBottomWidth: 2,
         borderColor: "black",
-
     }
 });
 
-
-export default function FilmTable({film}) {
+//
+function FilmTable({ film }) {
     const classes = useStyles();
     const filmContent = film;
     return (
@@ -51,5 +50,5 @@ export default function FilmTable({film}) {
             </Table>
         </TableContainer>
     );
-
 }
+export default FilmTable;
