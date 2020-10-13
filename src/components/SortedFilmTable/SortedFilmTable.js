@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { DataGrid } from '@material-ui/data-grid';
-import './SortedFilmTable.css';
 import { makeStyles } from '@material-ui/core/styles';
 
 
 
 const columns = [
-    { field: 'id', headerName: 'Episode ID', type: 'number', width: 120 },
+    { field: 'id', headerName: 'Episode ID', type: 'number', width: 150 },
 
     { field: 'title', headerName: 'Title', width: 200 },
     { field: 'release_date', headerName: 'Release Date', type: 'date', width: 200 },
