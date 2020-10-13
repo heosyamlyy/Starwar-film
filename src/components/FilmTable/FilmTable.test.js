@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { render, cleanup } from '@testing-library/react';
+import { render} from '@testing-library/react';
 import { Table, TableContainer, TableHead, TableRow, TableBody } from '@material-ui/core';
 
-afterEach(cleanup);
 it('renders TableContainer correctly', () => {
     const div = document.createElement('div');
     render(<TableContainer></TableContainer>, div);
